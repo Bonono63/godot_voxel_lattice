@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://fud0wydvhvua"]
+[gd_scene load_steps=8 format=3 uid="uid://fud0wydvhvua"]
 
 [ext_resource type="PackedScene" uid="uid://dqw4261r8y80f" path="res://lattice.tscn" id="1_va4p4"]
 [ext_resource type="PackedScene" uid="uid://dudtjsaf4llee" path="res://player.tscn" id="2_ew2up"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_77r6e"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_knyiw"]
 
@@ -13,6 +15,7 @@ sky_material = SubResource("ProceduralSkyMaterial_c8ymp")
 [sub_resource type="Environment" id="Environment_ukl7n"]
 background_mode = 2
 sky = SubResource("Sky_4cp5h")
+tonemap_mode = 3
 
 [node name="World" type="Node3D"]
 
@@ -20,6 +23,7 @@ sky = SubResource("Sky_4cp5h")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, 0.5)
+material_override = SubResource("StandardMaterial3D_77r6e")
 mesh = SubResource("BoxMesh_knyiw")
 
 [node name="Player" parent="." instance=ExtResource("2_ew2up")]

@@ -2,8 +2,8 @@ class_name ChunkData
 extends Resource
 
 const chunk_length = 256
-const chunk_length_squared = 65536
-const chunk_length_cubed = 16777216
+const chunk_length_squared = 256*256
+const chunk_length_cubed = 256*256*256
 
 var data : PackedInt32Array = PackedInt32Array()
 
